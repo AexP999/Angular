@@ -1,3 +1,18 @@
 h1 {
 	background: silver;
 }
+.cont {
+	display: flex;
+}
+#c1 {
+	background: rgb(236, 186, 186);
+	width: 30%;
+	margin: 10px;
+	padding: 5px;
+}
+#c2 {
+	background: rgb(183, 207, 246);
+	width: 70%;
+	margin: 10px;
+	padding: 5px;
+}
