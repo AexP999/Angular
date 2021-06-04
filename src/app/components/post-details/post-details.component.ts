@@ -15,7 +15,6 @@ export class PostDetailsComponent implements OnInit {
 		this.activatedRoute.params.subscribe((params) => {
 			this.postService.getPost(params.id).subscribe((value) => {
 				this.post = value;
-				console.log(this.post.body);
 			});
 		});
 	}
