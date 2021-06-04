@@ -16,3 +16,17 @@ h1 {
 	margin: 10px;
 	padding: 5px;
 }
+
+.nav {
+	clear: both;
+}
+a {
+	float: left;
+}
+.active a {
+	color: red;
+}
+
+a {
+	margin-right: 10px;
+}

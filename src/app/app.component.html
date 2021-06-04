@@ -1,4 +1,4 @@
-<h1>{{greeting}}</h1>
+<!-- <h1>{{greeting}}</h1> -->
 <!-- <div class="cont">
  <div id="c1">
    <app-users></app-users>
@@ -17,3 +17,17 @@
 </ul>
 
 <router-outlet></router-outlet> -->
+<div>
+  <nav>
+    <a routerLink="">Главная</a> |
+    <a routerLink="/item/3/details">Информация о товаре</a> |
+    <a routerLink="/item/3/stat">Статистика товара</a>
+    </nav>
+    <router-outlet></router-outlet>
+</div>
+
+
+  <!-- <button (click)="goHome()">На главную</button> -->
+  <!-- <a [routerLink]="['item','5']" [queryParams]="{'product':'phone','price':200}">item 5</a>
+    <a [routerLink]="['item','8']" [queryParams]="{'product':'tablet','price':100}">item 8</a> -->
+
