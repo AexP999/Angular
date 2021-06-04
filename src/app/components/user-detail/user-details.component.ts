@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/models/User';
 
 @Component({
@@ -10,12 +10,15 @@ import { User } from 'src/app/models/User';
 export class UserDetailsComponent implements OnInit {
 	user: User;
 
-	constructor(private router: Router) {
-		this.user = this.router.getCurrentNavigation()?.extras.state as User;
-		console.log(this.user);
+	constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+		this.activatedRoute.params.subscribe((params) => {
+			this.user = this.router.getCurrentNavigation()?.extras.state as User;
+			// console.log(this.user);
+
+		});
 	}
 
-	ngOnInit() {
-		console.log(history.state);
+	ngOnInit(): void {
+		// console.log(history.state);
 	}
 }
