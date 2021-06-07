@@ -8,10 +8,10 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 })
 export class ResolveService implements Resolve<Observable<any[]>> {
 	constructor(private httpClient: HttpClient) {}
-	resolve(
-		route: ActivatedRouteSnapshot,
-		state: RouterStateSnapshot
-	): Observable<any[]> | Observable<Observable<any[]>> | Promise<Observable<any[]>> {
+	resolve(): Observable<any[]> | Observable<Observable<any[]>> | Promise<Observable<any[]>> {
 		return this.httpClient.get<any[]>('https://jsonplaceholder.typicode.com/comments');
 	}
 }
+
+// route: ActivatedRouteSnapshot,
+// state: RouterStateSnapshot

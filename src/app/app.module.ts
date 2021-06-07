@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ResolveService } from './service/resolve.service';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -14,7 +15,7 @@ import { UserDetailsComponent } from './components/user-detail/user-details.comp
 import { PostDetailsComponent } from './components/post-details/post-details.component';
 import { DeactivatorService } from './service/deactivator.service';
 import { CommentsComponent } from './components/comments/comments.component';
-import { ResolveService } from './service/resolve.service';
+import { CommentComponent } from './components/comment/comment.component';
 
 let routes: Routes = [
 	{ path: 'home', component: HomeComponent },
@@ -37,7 +38,9 @@ let routes: Routes = [
 		PostsComponent,
 		PostComponent,
 		PostDetailsComponent,
-		UserDetailsComponent
+		UserDetailsComponent,
+		CommentsComponent,
+		CommentComponent
 	],
 	imports: [ BrowserModule, AppRoutingModule, HttpClientModule, RouterModule.forRoot(routes) ],
 	providers: [],
