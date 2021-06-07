@@ -6,6 +6,4 @@ import { CommonModule } from '@angular/common';
 	templateUrl: 'app.component.html',
 	styleUrls: [ 'app.component.scss' ]
 })
-export class AppComponent {
-	greeting = 'Привет';
-}
+export class AppComponent {}
