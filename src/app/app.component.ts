@@ -9,4 +9,3 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
 	greeting = 'Привет';
 }
-// s

@@ -13,7 +13,7 @@ export class PostService {
 	getPosts(): Observable<Post[]> {
 		return this.httpClient.get<Post[]>(this.url);
 	}
-	getPost(id: string): Observable<Post> {
-		return this.httpClient.get<Post>(this.url + '/' + id);
-	}
+	// getPost(id: string): Observable<Post> {
+	// 	return this.httpClient.get<Post>(this.url + '/' + id);
+	// }
 }

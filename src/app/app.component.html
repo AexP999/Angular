@@ -1,19 +1,8 @@
-<!-- <h1>{{greeting}}</h1>
-<div class="cont">
- <div id="c1">
-   <app-users></app-users>
- </div>
- <div id="c2">
-   <app-posts></app-posts>
- </div>
-</div> -->
 
-<ul>
-  <li><a [routerLink]="['home']">home</a></li>
-  <li><a routerLink="users">users</a></li>
-  <!-- <li><a routerLink="users"></a>users1</li> -->
-  <li><a [routerLink]="['posts']" routerLinkActive="router-link-active">posts</a></li>
-  <li>comments</li>
-</ul>
+  <div>
+    <p><a [routerLink]="['home']" >home</a></p>
+   <p><a [routerLink]="['userposts']" >userposts</a></p>
+
+  </div>
 
 <router-outlet></router-outlet>
