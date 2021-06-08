@@ -11,8 +11,9 @@ import { UsersComponent } from './components/users/users.component';
 import { UserPostProceedComponent } from './components/userPostProceed/userpostproceed.component';
 
 let routes: Routes = [
-	{ path: 'home', component: HomeComponent },
-	{ path: 'userposts', component: UserPostProceedComponent }
+
+	{ path: 'users', component: UsersComponent }
+	{ path: 'posts', component: PostsComponent }
 ];
 
 @NgModule({
