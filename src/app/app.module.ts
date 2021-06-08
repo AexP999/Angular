@@ -9,7 +9,6 @@ import { PostsComponent } from './components/posts/posts.component';
 import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserComponent } from './components/user/user.component';
-import { UserPostProceedComponent } from './components/userPostProceed/userpostproceed.component';
 
 let routes: Routes = [
 	{ path: 'home', component: HomeComponent },
@@ -17,14 +16,7 @@ let routes: Routes = [
 ];
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		UsersComponent,
-		PostsComponent,
-		HomeComponent,
-		UserPostProceedComponent,
-		UserComponent
-	],
+	declarations: [ AppComponent, UsersComponent, PostsComponent, HomeComponent, UserComponent ],
 	imports: [ BrowserModule, AppRoutingModule, HttpClientModule, RouterModule.forRoot(routes) ],
 	providers: [],
 	bootstrap: [ AppComponent ]
