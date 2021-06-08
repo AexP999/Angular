@@ -2,12 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import {User} from '../models/User';
+import { User } from '../models/user';
 
 @Injectable({
 	providedIn: 'root'
 })
-export class UserResolveService implements Resolve<User {
+export class UserResolveService implements Resolve<User> {
 	private url = 'https://jsonplaceholder.typicode.com/users';
 
 	constructor(private httpClient: HttpClient) {}

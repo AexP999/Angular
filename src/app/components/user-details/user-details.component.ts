@@ -1,5 +1,5 @@
 import { Router, ActivatedRoute } from '@angular/router';
-import { User } from 'src/app/models/User';
+import { User } from 'src/app/models/user';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -16,6 +16,7 @@ export class UserDetailsComponent implements OnInit {
    }
 
   ngOnInit() {
+
   }
 
 }
