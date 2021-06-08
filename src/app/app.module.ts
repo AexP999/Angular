@@ -1,3 +1,4 @@
+import { UserResolveService } from './service/user.resolve.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,8 +15,14 @@ let routes: Routes = [
 	{
 		path: 'users',
 		component: UsersComponent,
+		resolve: { data: UserResolveService },
 		children: [ { path: ':id', component: UserDetailsComponent } ]
 	},
+	// {
+	// 	path: 'users',
+	// 	component: UsersComponent,
+	// 	children: [ { path: ':id', component: UserDetailsComponent } ]
+	// },
 	{ path: 'posts', component: PostsComponent }
 ];
 
