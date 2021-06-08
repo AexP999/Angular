@@ -6,14 +6,12 @@ import { Post } from '../models/post';
 @Injectable({
 	providedIn: 'root'
 })
-export class PostService {
+export class UserPostService {
 	private url = 'https://jsonplaceholder.typicode.com/posts';
 
 	constructor(private httpClient: HttpClient) {}
-	// getPosts(): Observable<Post[]> {
-	// 	return this.httpClient.get<Post[]>(this.url);
-	// }
-	getPost(userId: number): Observable<Post> {
+
+	getUserPost(userId: string): Observable<Post> {
 		return this.httpClient.get<Post>(this.url + '?userId=' + userId);
 	}
 }

@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { UserService } from '../../service/user.service';
-import { PostService } from '../../service/post.service';
-import { User } from '../../models/User';
-import { Post } from 'src/app/models/Post';
+import { UserPostService } from './../../service/userpost.service';
+import { User } from '../../models/user';
+import { Post } from 'src/app/models/post';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'app-userpostproceed',
@@ -10,19 +11,26 @@ import { Post } from 'src/app/models/Post';
 	styleUrls: [ './userpostproceed.component.scss' ]
 })
 export class UserPostProceedComponent implements OnInit {
-	@Input() users: User[];
+	// @Input() user: User[];
+	users: User[];
 	posts: Post[];
-	constructor(private userService: UserService, private postService: PostService) {}
+
+	constructor(
+		private userService: UserService,
+		private userPostService: UserPostService,
+		private activeRoute: ActivatedRoute
+	) {
+		this.activeRoute.params.subscribe((params) => {
+			console.log(params);
+		});
+
+		// console.log(this.posts);
+	}
 
 	ngOnInit(): void {
 		this.userService.getUsers().subscribe((value) => {
 			this.users = value;
-			// console.log(this.users);
-		});
-
-		this.postService.getPosts().subscribe((value1) => {
-			this.posts = value1;
-			// console.log(this.posts);
+			console.log(this.users[0].id);
 		});
 	}
 }

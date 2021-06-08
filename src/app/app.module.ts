@@ -8,11 +8,12 @@ import { AppComponent } from './app.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users.component';
+import { UserComponent } from './components/user/user.component';
 import { UserPostProceedComponent } from './components/userPostProceed/userpostproceed.component';
 
 let routes: Routes = [
 	{ path: 'home', component: HomeComponent },
-	{ path: 'userposts', component: UserPostProceedComponent }
+	{ path: 'userposts', component: UsersComponent }
 ];
 
 @NgModule({
@@ -21,7 +22,8 @@ let routes: Routes = [
 		UsersComponent,
 		PostsComponent,
 		HomeComponent,
-		UserPostProceedComponent
+		UserPostProceedComponent,
+		UserComponent
 	],
 	imports: [ BrowserModule, AppRoutingModule, HttpClientModule, RouterModule.forRoot(routes) ],
 	providers: [],
