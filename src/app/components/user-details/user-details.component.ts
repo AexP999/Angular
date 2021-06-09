@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: [ './user-details.component.scss' ]
 })
 export class UserDetailsComponent implements OnInit {
-	user: any;
+	user: User;
 
 	constructor(private activeRoute: ActivatedRoute, private userService: UserService) {
 		this.activeRoute.params.subscribe((value) => {
@@ -18,7 +18,7 @@ export class UserDetailsComponent implements OnInit {
 			this.userService.getUserById(id).subscribe((response) => (this.user = response));
 			// this.router.getCurrentNavigation()?.extras.state as User
 		});
-		this.activeRoute.data.subscribe((data) => (this.user = data));
+		this.activeRoute.data.subscribe(({ data }) => (this.user = data));
 	}
 
 	ngOnInit() {}

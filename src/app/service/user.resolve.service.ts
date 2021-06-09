@@ -11,9 +11,9 @@ import { User } from '../models/user';
 export class UserResolveService implements Resolve<User> {
 	constructor(private httpClient: HttpClient, private userService: UserService) {}
 	resolve(
-		activatedRouteSnapshot: ActivatedRouteSnapshot,
+		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
-	): Observable<User> {
-		return this.userService.getUserById(activatedRouteSnapshot.params.id);
+	): User | Observable<User> | Promise<User> {
+		return this.userService.getUserById(route.params.id);
 	}
 }
