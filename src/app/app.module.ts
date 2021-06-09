@@ -10,19 +10,27 @@ import { UsersComponent } from './components/users/users.component';
 import { UserComponent } from './components/user/user.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { PostsComponent } from './components/posts/posts.component';
+import { PostComponent } from './components/post/post.component';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
 
 let routes: Routes = [
 	{
 		path: 'users',
 		component: UsersComponent,
-		resolve: { data: UserResolveService },
-		children: [ { path: ':id', component: UserDetailsComponent } ]
+
+		children: [
+			{
+				path: ':id',
+				component: UserDetailsComponent,
+				resolve: { data: UserResolveService }
+			}
+		]
 	},
-	// {
-	// 	path: 'users',
-	// 	component: UsersComponent,
-	// 	children: [ { path: ':id', component: UserDetailsComponent } ]
-	// },
+	{
+		path: 'posts',
+		component: PostsComponent,
+		children: [ { path: ':id', component: PostDetailsComponent } ]
+	},
 	{ path: 'posts', component: PostsComponent }
 ];
 
@@ -32,7 +40,9 @@ let routes: Routes = [
 		UsersComponent,
 		PostsComponent,
 		UserDetailsComponent,
-		UserComponent
+		UserComponent,
+		PostComponent,
+		PostDetailsComponent
 	],
 
 	imports: [ BrowserModule, AppRoutingModule, HttpClientModule, RouterModule.forRoot(routes) ],

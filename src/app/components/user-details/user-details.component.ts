@@ -1,22 +1,25 @@
-import { Router, ActivatedRoute } from '@angular/router';
-import { User } from 'src/app/models/user';
+import { User } from './../../models/user';
+import { UserService } from './../../service/user.service';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-user-details',
-  templateUrl: './user-details.component.html',
-  styleUrls: ['./user-details.component.scss']
+	selector: 'app-user-details',
+	templateUrl: './user-details.component.html',
+	styleUrls: [ './user-details.component.scss' ]
 })
 export class UserDetailsComponent implements OnInit {
+	user: any;
 
-  user: User
-  constructor(private router: Router, private activeRoute: ActivatedRoute) {
-    this.activeRoute.params.subscribe(params =>
-      {this.user = this.router.getCurrentNavigation()?.extras.state as User})
-   }
+	constructor(private activeRoute: ActivatedRoute, private userService: UserService) {
+		this.activeRoute.params.subscribe((value) => {
+			let id = value.id;
 
-  ngOnInit() {
+			this.userService.getUserById(id).subscribe((response) => (this.user = response));
+			// this.router.getCurrentNavigation()?.extras.state as User
+		});
+		this.activeRoute.data.subscribe((data) => (this.user = data));
+	}
 
-  }
-
+	ngOnInit() {}
 }

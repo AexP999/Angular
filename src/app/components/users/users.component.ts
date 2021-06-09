@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from './../../service/user.service';
 import { User } from '../../models/user';
@@ -10,7 +11,11 @@ import { User } from '../../models/user';
 export class UsersComponent implements OnInit {
 	users: User[];
 
-	constructor(private userService: UserService) {}
+	constructor(private userService: UserService, private activatedRoute: ActivatedRoute) {
+		// this.activatedRoute.data.subscribe((value) => {
+		// 	console.log(value);
+		// });
+	}
 
 	ngOnInit(): void {
 		this.userService.getUsers().subscribe((value) => {
