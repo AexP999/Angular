@@ -1,7 +1,6 @@
-  <div>
-       <p>{{post.id}}</p>
-       <p>{{post.userId}}</p>
-       <p>{{post.title}}</p>
-       <p>{{post.body}}</p>
+<div *ngFor="let postcomment of postcomments">
 
-    </div>
+  <p>comment: {{postcomment.id}}</p>
+  <p>name: {{postcomment.name}}</p>
+  <p>body: {{postcomment.body}}</p>
+</div>

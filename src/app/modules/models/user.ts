@@ -2,7 +2,7 @@ export interface User {
 	id: number;
 	username: string;
 	email: string;
-	address: any;
+	address: object;
 	// city: string;
 	name: string;
 }

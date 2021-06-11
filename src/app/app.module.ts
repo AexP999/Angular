@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './components/app.component';
+import { PostsComponent } from './modules/posts-total/posts-comonents/posts/posts.component';
+import { PostComponent } from './modules/posts-total/posts-comonents/post/post.component';
 
 let routes: Routes = [
 	// {
@@ -37,6 +39,7 @@ let routes: Routes = [
 	declarations: [ AppComponent ],
 
 	imports: [ BrowserModule, AppRoutingModule, HttpClientModule, RouterModule.forRoot(routes) ],
+
 	providers: [],
 
 	bootstrap: [ AppComponent ]

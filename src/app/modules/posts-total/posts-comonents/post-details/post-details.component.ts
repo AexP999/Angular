@@ -1,6 +1,8 @@
-import { PostService } from '../../service/post.service';
+import { Post } from './../../../models/post';
+import { PostCommentService } from './../../service/post-comment.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Comment } from 'src/app/modules/models/comment';
 
 @Component({
 	selector: 'app-post-details',
@@ -8,17 +10,22 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: [ './post-details.component.scss' ]
 })
 export class PostDetailsComponent implements OnInit {
-	post: any;
+	post: Post;
+	postcomments: Comment[];
+	postcommentId: number;
 
-	constructor(private activatedRoute: ActivatedRoute, private postService: PostService) {
+	constructor(
+		private activatedRoute: ActivatedRoute,
+		private postCommentService: PostCommentService
+	) {}
+
+	ngOnInit() {
 		this.activatedRoute.params.subscribe((value) => {
 			let id = value.id;
-			this.postService.getPostById(id).subscribe((value) => {
-				this.post = value;
+
+			this.postCommentService.getPostComment(id).subscribe((value) => {
+				this.postcomments = value;
 			});
 		});
-		this.activatedRoute.data.subscribe((data) => (this.post = data));
 	}
-
-	ngOnInit() {}
 }

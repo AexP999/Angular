@@ -1,7 +1,8 @@
 import { User } from '../../../models/user';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../service/user.service';
+import { PostService } from 'src/app/modules/posts-total/service/post.service';
+import { Post } from 'src/app/modules/models/post';
 
 @Component({
 	selector: 'app-user-details',
@@ -10,15 +11,17 @@ import { UserService } from '../../service/user.service';
 })
 export class UserDetailsComponent implements OnInit {
 	user: User;
+	userpost: Post[];
+	postUserid: number;
 
-	constructor(private activeRoute: ActivatedRoute, private userService: UserService) {
+	constructor(private activeRoute: ActivatedRoute, private postService: PostService) {}
+	ngOnInit() {
 		this.activeRoute.params.subscribe((value) => {
-			let id = value.id;
+			let postUserid = value.id;
 
-			this.userService.getUserById(id).subscribe((response) => (this.user = response));
+			this.postService.getUserPost(postUserid).subscribe((response) => {
+				this.userpost = response;
+			});
 		});
-		this.activeRoute.data.subscribe(({ value }) => (this.user = value));
 	}
-
-	ngOnInit() {}
 }
