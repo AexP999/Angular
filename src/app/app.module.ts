@@ -9,17 +9,6 @@ import { PostsComponent } from './modules/posts-total/posts-comonents/posts/post
 import { PostComponent } from './modules/posts-total/posts-comonents/post/post.component';
 
 let routes: Routes = [
-	// {
-	// 	path: 'users',
-	// 	component: UsersComponent,
-	// 	children: [
-	// 		{
-	// 			path: ':id',
-	// 			component: UserDetailsComponent,
-	// 			resolve: { data: UserResolveService }
-	// 		}
-	// 	]
-	// },
 	{
 		path: 'users',
 		loadChildren: () => import('./modules/users-total/users.module').then((m) => m.UsersModule)
