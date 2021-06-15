@@ -3,6 +3,5 @@ export interface User {
 	username: string;
 	email: string;
 	address: object;
-	// city: string;
 	name: string;
 }
