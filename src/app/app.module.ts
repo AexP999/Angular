@@ -1,23 +1,28 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { UsersComponent } from './components/users/users.component';
-import { UserComponent } from './components/user/user.component';
+import { CarsComponent } from './components/cars/cars.component';
 
-let routes: Routes = [
-	{
-		path: 'users',
-		component: UsersComponent
-	}
-];
+// let routes: Routes = [
+// 	{
+// 		path: 'cars',
+// 		component: CarsComponent
+// 	}
+// ];
 
 @NgModule({
-	declarations: [ AppComponent, UsersComponent, UserComponent ],
+	declarations: [ AppComponent, CarsComponent ],
 
-	imports: [ BrowserModule, HttpClientModule, RouterModule.forRoot(routes) ],
+	imports: [
+		BrowserModule,
+		HttpClientModule,
+		FormsModule
+		// RouterModule.forRoot(routes)
+	],
 	providers: [],
 
 	bootstrap: [ AppComponent ]

@@ -1,0 +1,7 @@
+<div *ngFor="let car of cars">
+<p>{{car.id}}. {{car.model}} -- {{car.price}}$ -- {{car.year}}</p>
+</div>
+<form #thisForm='ngForm' (ngSubmit)="submit(thisForm)">
+  <input type="text" name="model" [(ngModel)]="car1.model">
+<button>save</button>
+</form>
