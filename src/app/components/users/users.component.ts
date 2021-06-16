@@ -11,7 +11,7 @@ import { User } from '../../models/user';
 export class UsersComponent implements OnInit {
 	users: User[];
 	singleUser: User;
-	username: any;
+	username: string;
 
 	constructor(private userService: UserService, private dataTransfer: DataTransferService) {}
 

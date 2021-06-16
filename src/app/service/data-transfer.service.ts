@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 	providedIn: 'root'
 })
 export class DataTransferService {
-	globalStore = new BehaviorSubject<any>('anonimous');
+	globalStore = new BehaviorSubject<string>('anonimous');
 
 	constructor() {}
 }
