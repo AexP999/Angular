@@ -1,0 +1,54 @@
+<div >
+<!-- [hidden]="submitted" -->
+  <form #carForm='ngForm' (ngSubmit)="submit(carForm)">
+    <div class="col-xs-14">
+
+      <div class="form-group">
+        <label>Enter the car model</label>
+        <input
+        class="form-control"
+        type="text"
+        name="model"
+        [(ngModel)]="car.model"
+        required
+        #model = "ngModel"
+        />
+        <div [hidden]="model.valid || model.pristine" class="alert alert-danger">
+          Enter the model
+      </div>
+      </div>
+      <div class="form-group">
+        <label>Enter the car price</label>
+        <input
+        class="form-control"
+        type="number"
+        name="price"
+        [(ngModel)]="car.price"
+        required
+        #price = "ngModel"
+        />
+        <div [hidden]="price.valid || price.pristine" class="alert alert-danger">
+          Enter the price
+      </div>
+      </div>
+      <div class="form-group">
+        <label>Enter the car year</label>
+        <input
+        class="form-control"
+        type="number"
+        name="year"
+        [(ngModel)]="car.year"
+        required
+        #year = "ngModel"
+        />
+        <div [hidden]="year.valid || year.pristine" class="alert alert-danger">
+          Enter the year
+      </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" [disabled]="!carForm.form.valid" class="btn btn-default">save</button>
+      </div>
+    </div>
+
+  </form>
+</div>
