@@ -1,0 +1,9 @@
+<div *ngFor="let movie of movies; let i=index "  >
+<div >
+
+<div *ngFor="let genre_id  of movie.genre_ids">
+  {{genre_id}}
+</div>
+</div>
+<app-movie [movie]="movie" ></app-movie>
+</div>
