@@ -9,20 +9,26 @@ import { MovieListService } from 'src/app/service/movie-list.service';
 })
 export class MovieListComponent implements OnInit {
 	movies: any[];
-	genres: any;
-	constructor(private movieListService: MovieListService, private genreService: GenreService) {
+	genres: any[];
+	genre: any[];
+	id: string;
+	basePosterUrl: string = 'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/';
+	constructor(private movieListService: MovieListService, private genreService: GenreService) {}
+
+	ngOnInit() {
+		this.genreService.getGenre().subscribe((value) => {
+			this.genres = value.genres;
+			console.log(this.genres);
+		});
+
 		this.movieListService.getMovies().subscribe((value) => {
 			this.movies = value.results;
-			console.log(value);
-
-			this.genreService.getGenre().subscribe((value) => {
-				this.genres = value.genres;
-				console.log(value);
-			});
-
-			this.genreService.getGenreByid('Action').subscribe((value) => console.log(value));
+			console.log(this.movies);
 		});
 	}
 
-	ngOnInit() {}
+	getGenres(id: string) {
+		this.genre = this.genres.filter((genre) => genre.id === id);
+		return this.genre[0].name;
+	}
 }

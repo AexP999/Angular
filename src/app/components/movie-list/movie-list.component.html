@@ -1,9 +1,13 @@
-<div *ngFor="let movie of movies; let i=index "  >
-<div >
+<div *ngFor="let movie of movies "  >
+  <div>
+    <div>{{movie?.title}} </div>
+    <div><img src="{{basePosterUrl}}{{movie.poster_path}}"></div>
+    <div *ngFor="let genre_id  of movie.genre_ids">
+      {{getGenres(genre_id)}}
+    </div>
+  </div>
+  <div>Rating: {{movie.vote_average}} </div>
+  <app-movie [movie]="movie" ></app-movie>
+</div>
 
-<div *ngFor="let genre_id  of movie.genre_ids">
-  {{genre_id}}
-</div>
-</div>
-<app-movie [movie]="movie" ></app-movie>
-</div>
+<!-- movie.backdrop_path -->

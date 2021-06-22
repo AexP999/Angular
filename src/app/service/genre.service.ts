@@ -12,13 +12,18 @@ export class GenreService {
 	constructor(private http: HttpClient) {}
 
 	getGenre(): Observable<any> {
-		return this.http.get<any>(this.urlGenre);
-	}
+		return this.http.get<any>(this.urlGenre)
+
+			}
+
+
 	getGenreByid(id: string): Observable<any[]> {
 		return this.http.get<any[]>(this.urlGenre).pipe(
-			map((values) => {
-				return values.filter((value) => value.name === id);
+			map((data: any) => {
+				return data.genres;
 			})
 		);
 	}
+
+	// console.log(genreList);
 }
