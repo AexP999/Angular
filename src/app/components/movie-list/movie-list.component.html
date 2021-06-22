@@ -1,13 +1,16 @@
-<div *ngFor="let movie of movies "  >
+<div class="cardCont" *ngFor="let movie of movies "  >
   <div>
-    <div>{{movie?.title}} </div>
+    <h4>{{movie?.title}} </h4>
     <div><img src="{{basePosterUrl}}{{movie.poster_path}}"></div>
-    <div *ngFor="let genre_id  of movie.genre_ids">
-      {{getGenres(genre_id)}}
+    <div class="genres ">
+      <div class="genre badge bg-secondary " *ngFor="let genre_id  of movie.genre_ids">
+        {{getGenres(genre_id)}}
+      </div>
+
     </div>
   </div>
-  <div>Rating: {{movie.vote_average}} </div>
-  <app-movie [movie]="movie" ></app-movie>
+  <div>Rating: {{movie.vote_average}}/10 </div>
+  <!-- <app-movie [movie]="movie" ></app-movie> -->
 </div>
 
 <!-- movie.backdrop_path -->

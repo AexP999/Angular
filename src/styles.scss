@@ -9,4 +9,8 @@
 // app-post-details {
 // 	width: 50%;
 // }
-@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+@import url('https://unpkg.com/bootstrap@5.0/dist/css/bootstrap.min.css');
+app-movie-list {
+	display: flex;
+	flex-wrap: wrap;
+}
