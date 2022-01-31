@@ -1,5 +1,8 @@
 <div>
-{{user.id}}. {{user.name}}
-<button (click)="toDetails()">Details</button>
-
+  {{ user.id }}. {{ user.name }}
+  <button (click)="toDetails()">Details</button>
 </div>
+
+<ng-template #loading>
+  <div>Loading...</div>
+</ng-template>
